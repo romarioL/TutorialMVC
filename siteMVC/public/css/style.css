@@ -1,0 +1,30 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	
+
+}
+
+body {
+	width: 100%;
+	height: 500px;
+}
+
+.header {
+	background: blue;
+	height: 10%;
+	width: 100%;
+}
+
+.main {
+	background: red;
+	height: 80%;
+	width: 100%;
+}
+
+.footer {
+	background: green;
+	height: 10%;
+	width: 100%;
+}

@@ -8,23 +8,33 @@
 
 body {
 	width: 100%;
-	height: 500px;
+	
 }
 
+.nav {
+	float: left;
+	width: 100%;
+	background: #000000;
+	text-align: center;
+	padding: 15px;
+}
+
+.nav a {
+	color: #fff;
+	text-align: center;
+	padding: 5px;
+}
 .header {
-	background: blue;
-	height: 10%;
-	width: 100%;
-}
-
-.main {
-	background: red;
-	height: 80%;
-	width: 100%;
+	height: 200px;
 }
 
 .footer {
-	background: green;
-	height: 10%;
+	height: 100px;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
 	width: 100%;
 }
+
+

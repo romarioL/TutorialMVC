@@ -6,15 +6,16 @@ use Src\classes\ClassRender;
 
 use Src\interfaces\InterfaceView;
 
-class ControllerHome extends ClassRender implements InterfaceView {
-	
+class ControllerContato extends ClassRender implements InterfaceView {
+
 	public function __construct() {
 
-		$this->setTitle("Página inicial");
-		$this->setDescription("Essa  é a página inicial");
+		$this->setTitle("Página Contato");
+		$this->setDescription("Essa  é a página de contato");
 		$this->setKeywords("mvc completo, curso mvc");
-		$this->setDir("home");
+		$this->setDir("contato");
 		$this->renderLayout();
 
 	}
+
 }

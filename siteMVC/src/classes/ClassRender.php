@@ -51,16 +51,34 @@ class ClassRender {
 
    }
 
-   public function addHead() {
+    public function addHead() {
+           
+            if(file_exists(DIRREQ . "app/view/{$this->getDir()}/head.php")) {
+   	   	    include(DIRREQ . "app/view/{$this->getDir()}/head.php");
+   	   }
+
+   }
+
+   public function addHeader() {
+
+   	   if(file_exists(DIRREQ . "app/view/{$this->getDir()}/header.php")) {
+   	   	    include(DIRREQ . "app/view/{$this->getDir()}/header.php");
+   	   }
 
    }
 
    public function addMain() {
-
+        if(file_exists(DIRREQ . "app/view/{$this->getDir()}/main.php")) {
+   	   	    include(DIRREQ . "app/view/{$this->getDir()}/main.php");
+   	   }
    }
 
 
    public function addFooter() {
+
+   	     if(file_exists(DIRREQ . "app/view/{$this->getDir()}/footer.php")) {
+   	   	    include(DIRREQ . "app/view/{$this->getDir()}/footer.php");
+   	   }
 
    }
 

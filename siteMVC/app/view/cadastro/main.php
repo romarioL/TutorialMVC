@@ -28,3 +28,5 @@
 
 	<input type="submit" value="Pesquisar">
 </form>
+
+<div class="resultado"></div>

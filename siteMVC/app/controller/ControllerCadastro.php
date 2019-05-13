@@ -10,13 +10,20 @@ use App\model\classCadastro;
 
 class ControllerCadastro extends classCadastro {
 
+	protected $id;
+
 	protected $nome;
 
 	protected $sexo;
 
 	protected $cidade;
 
+	use \Src\traits\TraitURLParser;
+
 	public function __construct() {
+
+
+		if(count($this->parserURL()) == 1 ) {
 
 
 		$render = new ClassRender();
@@ -29,7 +36,14 @@ class ControllerCadastro extends classCadastro {
 
 	}
 
+	}
+
 	public function recVariaveis() {
+        if(isset($_POST['id'])) {
+			$this->id =  $_POST['id'];
+			
+		}
+
 		if(isset($_POST['nome'])) {
 			$this->nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
 			
@@ -61,8 +75,11 @@ class ControllerCadastro extends classCadastro {
 		$this->recVariaveis();
 		$b = parent::selecionaClientes($this->nome, $this->sexo, $this->cidade);
 
-		echo "<table border='1'>
+		echo "
+		<form name='FormDeletar' id='FormDeletar' action='" .DIRPAGE. "cadastro/deletar' method= 'post'>
+		<table border='1'>
 		<tr>
+		<td>Ação</td>
 		<td>Nome</td>
 		<td>Sexo</td>
 		<td>Cidade</td>
@@ -72,13 +89,25 @@ class ControllerCadastro extends classCadastro {
 		foreach($b as $c) {
 			echo "<table border='1'>
 		<tr>
+		<td><input type='checkbox' id='id' name='id[]' value='$c[id]'></td>
 		<td>$c[nome]</td>
 		<td>$c[sexo]</td>
 		<td>$c[cidade]</td>
 		</tr>";
 		}
 
-		echo "</table>";
+		echo "</table>
+		<input type='submit' value='Deletar'>
+		</form>";
+	}
+
+
+	public function deletar() {
+		$this->recVariaveis();
+		foreach($this->id as $idDeletar) {
+           $this->deletarClientes($idDeletar);
+		}
+		
 	}
 
 

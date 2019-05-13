@@ -47,7 +47,7 @@ class classCadastro extends classConexao {
 
 		while($fetch = $bfetch->fetch(\PDO::FETCH_ASSOC)) {
 
-			$array[$i] = ['nome' => $fetch['nome'], 'sexo' => $fetch['sexo'], 'cidade' => $fetch['cidade']];
+			$array[$i] = ['id' => $fetch['id'], 'nome' => $fetch['nome'], 'sexo' => $fetch['sexo'], 'cidade' => $fetch['cidade']];
 
 			$i++;
 
@@ -60,6 +60,16 @@ class classCadastro extends classConexao {
 	
 
 	}
+
+	protected function deletarClientes($id) {
+         $bfetch = $this->db = $this->conexaoDB()->prepare("DELETE FROM teste WHERE id = :id");
+         $bfetch->bindParam(":id", $id, \PDO::PARAM_INT);
+         $bfetch->execute();
+	}
+
+	
+
+
 
 
 

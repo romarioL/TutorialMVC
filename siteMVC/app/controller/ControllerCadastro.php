@@ -87,16 +87,18 @@ class ControllerCadastro extends classCadastro {
 		";
 
 		foreach($b as $c) {
-			echo "<table border='1'>
+			echo"
 		<tr>
 		<td><input type='checkbox' id='id' name='id[]' value='$c[id]'><img rel='$c[id]' class='imgRel' src='".DIRIMG."edit.jpeg' alt='Editar'></td>
 		<td>$c[nome]</td>
 		<td>$c[sexo]</td>
 		<td>$c[cidade]</td>
 		</tr>";
-		}
+	}
 
 		echo "</table>
+
+
 		<input type='submit' value='Deletar'>
 		</form>";
 	}
@@ -117,7 +119,8 @@ class ControllerCadastro extends classCadastro {
 		
 
 		foreach($b as $c) {
-		
+
+			    $id = $c['id'];
 				$nome = $c['nome'];
 				$sexo = $c['sexo'];
 				$cidade = $c['cidade'];
@@ -129,6 +132,7 @@ class ControllerCadastro extends classCadastro {
 
 
 		 echo "<form name='formCadastro' action='". DIRPAGE ."cadastro/atualizar' id='formCadastro' method='post'>
+		 <input type='hidden' name='id' id='Id' value='$id'><br>
 	Nome: <input type='text' name='nome' id='nome' value='$nome'><br>
 	Sexo: <select  name='sexo' id='sexo' >
 	    <option value='$sexo'>$sexo</option>
@@ -146,7 +150,7 @@ class ControllerCadastro extends classCadastro {
 
 	public function atualizar() {
 		$this->recVariaveis();
-	    $this->atualizarClientes($this->id, $this->nome, $this->sexo, $this->cidade);
+	    $b= $this->atualizarClientes($this->id, $this->nome, $this->sexo, $this->cidade);
 	}
 
 

@@ -95,7 +95,7 @@ class classCadastro extends classConexao {
         $bfetch->bindParam(":nome", $nome, \PDO::PARAM_STR);
         $bfetch->bindParam(":sexo", $sexo,  \PDO::PARAM_STR);
         $bfetch->bindParam(":cidade", $cidade,  \PDO::PARAM_STR);
-
+       
       
 
          

@@ -112,21 +112,18 @@ class ControllerCadastro extends classCadastro {
 
 	public function puxaDB($id) {
 		$this->recVariaveis();
-		$b = $this->selecionaClientes($this->nome, $this->sexo, $this->cidade);
-		var_dump($b);
+		$b = $this->selecionarParaMostrar($id);
+		
 		
 
 		foreach($b as $c) {
-			if($c['id'] == $id) {
+		
 				$nome = $c['nome'];
 				$sexo = $c['sexo'];
 				$cidade = $c['cidade'];
 
-				var_dump($nome);
-				var_dump($sexo);
-				var_dump($cidade);
-			}
-		}
+			}	
+		
 
 
 

@@ -67,6 +67,27 @@ class classCadastro extends classConexao {
          $bfetch->execute();
 	}
 
+
+	protected function selecionarParaMostrar($id) {
+
+		$bfetch = $this->db = $this->conexaoDB()->prepare("SELECT id, nome, sexo, cidade FROM teste where id = :id");
+		$bfetch->bindParam(":id", $id, \PDO::PARAM_INT);
+        $bfetch->execute();
+
+        $i = 0;
+
+        while($fetch = $bfetch->fetch(\PDO::FETCH_ASSOC)) {
+
+			$array[$i] = ['id' => $fetch['id'], 'nome' => $fetch['nome'], 'sexo' => $fetch['sexo'], 'cidade' => $fetch['cidade']];
+
+			$i++;
+
+			 return $array;
+
+		}
+
+	}
+
 	
 
 

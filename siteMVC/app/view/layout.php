@@ -30,9 +30,9 @@
      <div class="main">
      	<?php echo $this->addMain(); ?>
      </div>
-     <div class="footer">
+     <div class="footer"> 
         2019 - TODOS OS DIREITOS RESERVADOS WEB DESIGN EM FOCO
-     	<?php  echo $this->addFooter();?>
+     	<?php  echo $this->addFooter();?> 
      </div>
  </body>
  </html>

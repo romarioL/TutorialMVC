@@ -113,7 +113,7 @@ class ControllerCadastro extends classCadastro {
 	public function puxaDB($id) {
 		$this->recVariaveis();
 		$b = $this->selecionarParaMostrar($id);
-		
+
 		
 
 		foreach($b as $c) {
@@ -131,7 +131,7 @@ class ControllerCadastro extends classCadastro {
 		 echo "<form name='formCadastro' action='". DIRPAGE ."cadastro/atualizar' id='formCadastro' method='post'>
 	Nome: <input type='text' name='nome' id='nome' value='$nome'><br>
 	Sexo: <select  name='sexo' id='sexo' >
-	    <option value='$sexo'>Feminino</option>
+	    <option value='$sexo'>$sexo</option>
 		<option value='Feminino'>Feminino</option>
 		<option value='Masculino'>Masculino</option>
 	</select><br>
@@ -142,6 +142,11 @@ class ControllerCadastro extends classCadastro {
 
 
 
+	}
+
+	public function atualizar() {
+		$this->recVariaveis();
+	    $this->atualizarClientes($this->id, $this->nome, $this->sexo, $this->cidade);
 	}
 
 

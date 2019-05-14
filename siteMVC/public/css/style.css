@@ -28,8 +28,17 @@ body {
 	height: 200px;
 }
 
+.imgRel {
+	height: 30px;
+	width: 30px;
+}
+
 .main{
 	height: 100%;
+}
+
+.resultadoFormulario {
+	height: 100px;
 }
 
 .footer {

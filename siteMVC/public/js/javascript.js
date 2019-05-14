@@ -21,4 +21,23 @@ $(document).ready(function(){
 
            })
 	})
+
+  
+
+  $(document).on('click', '.imgRel', function() {
+    var ImgRel = $(this).attr('rel')
+
+    $.ajax({
+      url: DIRPAGE + 'cadastro/puxaDB/' + ImgRel,
+      method: 'post',
+      dataType: 'html',
+      data: {'id': ImgRel},
+      success: function(data) {
+         $('.resultadoFormulario').html(data)
+      }
+    })
+  })
+
+
 })
+

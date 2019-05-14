@@ -73,7 +73,7 @@ class ControllerCadastro extends classCadastro {
 
 	public function seleciona() {
 		$this->recVariaveis();
-		$b = parent::selecionaClientes($this->nome, $this->sexo, $this->cidade);
+		$b = $this->selecionaClientes($this->nome, $this->sexo, $this->cidade);
 
 		echo "
 		<form name='FormDeletar' id='FormDeletar' action='" .DIRPAGE. "cadastro/deletar' method= 'post'>
@@ -89,7 +89,7 @@ class ControllerCadastro extends classCadastro {
 		foreach($b as $c) {
 			echo "<table border='1'>
 		<tr>
-		<td><input type='checkbox' id='id' name='id[]' value='$c[id]'></td>
+		<td><input type='checkbox' id='id' name='id[]' value='$c[id]'><img rel='$c[id]' class='imgRel' src='".DIRIMG."edit.jpeg' alt='Editar'></td>
 		<td>$c[nome]</td>
 		<td>$c[sexo]</td>
 		<td>$c[cidade]</td>
@@ -108,6 +108,43 @@ class ControllerCadastro extends classCadastro {
            $this->deletarClientes($idDeletar);
 		}
 		
+	}
+
+	public function puxaDB($id) {
+		$this->recVariaveis();
+		$b = $this->selecionaClientes($this->nome, $this->sexo, $this->cidade);
+		var_dump($b);
+		
+
+		foreach($b as $c) {
+			if($c['id'] == $id) {
+				$nome = $c['nome'];
+				$sexo = $c['sexo'];
+				$cidade = $c['cidade'];
+
+				var_dump($nome);
+				var_dump($sexo);
+				var_dump($cidade);
+			}
+		}
+
+
+
+
+		 /*echo "<form name='formCadastro' action='". DIRPAGE ."cadastro/atualizar' id='formCadastro' method='post'>
+	Nome: <input type='text' name='nome' id='nome' value='$nome'><br>
+	Sexo: <select  name='sexo' id='sexo' >
+	    <option value='$sexo'>Feminino</option>
+		<option value='Feminino'>Feminino</option>
+		<option value='Masculino'>Masculino</option>
+	</select><br>
+	Cidade: <input type='text' name='cidade' id='cidade'value='$cidade'><br>
+
+	<input type='submit' value='Atualizar'>
+</form>"; */
+
+
+
 	}
 
 

@@ -30,3 +30,13 @@
 </form>
 
 <div class="resultado"></div>
+
+<hr>
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+<h1>Formulário de atualizações</h1>
+<div class="resultadoFormulario"></div>

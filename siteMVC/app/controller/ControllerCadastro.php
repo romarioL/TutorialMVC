@@ -131,7 +131,7 @@ class ControllerCadastro extends classCadastro {
 
 
 
-		 /*echo "<form name='formCadastro' action='". DIRPAGE ."cadastro/atualizar' id='formCadastro' method='post'>
+		 echo "<form name='formCadastro' action='". DIRPAGE ."cadastro/atualizar' id='formCadastro' method='post'>
 	Nome: <input type='text' name='nome' id='nome' value='$nome'><br>
 	Sexo: <select  name='sexo' id='sexo' >
 	    <option value='$sexo'>Feminino</option>
@@ -141,7 +141,7 @@ class ControllerCadastro extends classCadastro {
 	Cidade: <input type='text' name='cidade' id='cidade'value='$cidade'><br>
 
 	<input type='submit' value='Atualizar'>
-</form>"; */
+</form>"; 
 
 
 
